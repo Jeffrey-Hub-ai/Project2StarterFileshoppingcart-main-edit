@@ -17,7 +17,6 @@ function loadEventListeners() {
 
 
 // Functions
-
 function buyCourse(e) {
     e.preventDefault();
     // use the delegation to find the course that was added
@@ -31,5 +30,12 @@ function buyCourse(e) {
 }
 // read the HMTL information of the selected course
 function getCourseInfo(course) {
-        console.log(course);
+    //Create an Object with Course Data
+    const courseInfo =  {
+        image: course.querySelector('img').src,
+        title: course.querySelector('h4').textContent,
+        price: course.querySelector('.price span').textContent,
+        id: course.querySelector('a').getAttribute('data-id')
+    }
+    console.log(courseInfo);
 }
